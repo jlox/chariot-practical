@@ -1,0 +1,1613 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<base href="https://secure8.convio.net/cgisb/site/" />
+
+<title>
+
+Blue Print Site
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="Keywords" content=" " />
+<meta name="Description" content="" />
+<meta name="Robots" content="index, follow" />
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="../yui3/yui/yui-min.js"></script><noscript>&nbsp;</noscript>
+<script type="text/javascript" src="../js/convio/modules.js?version=2.9.2"></script><noscript>&nbsp;</noscript>
+<script type="text/javascript">
+var Y = YUI({base: '../yui3/',
+insertBefore: 'yui_marker_loader_css', // insert all YUI module css before customstyle so it can be overridden
+debug: false, 
+modules: getModules('../', 'convio', true)});
+</script><noscript>&nbsp;</noscript>
+
+
+<script type="text/javascript" src="../js/utils.js"></script><noscript>&nbsp;</noscript>
+
+<script type="text/javascript" src="../js/obs_comp_rollup.js"></script><noscript>&nbsp;</noscript>
+
+
+<link href="../css/themes/default.css" rel="stylesheet" type="text/css" />
+<link href="../css/themes/alphacube.css" rel="stylesheet" type="text/css"/>
+
+
+<link href="../css/UserGlobalStyle.css" rel="stylesheet" type="text/css" />
+
+
+<link href="../css/responsive/ResponsiveBase.css" rel="stylesheet" type="text/css" />
+
+
+<link href="../css/responsive/DonFormResponsive.css" rel="stylesheet" type="text/css" />
+
+
+
+<link href="../css/FormComponentsBehavior.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/FormComponentsBehavior.js"></script><noscript>&nbsp;</noscript>
+<script type="text/javascript" src="../js/don_level_elements.js"></script><noscript>&nbsp;</noscript>
+<script type="text/javascript" src="../js/don_premium_elements.js"></script><noscript>&nbsp;</noscript>
+<script type="text/javascript" src="../js/donations2.js"></script><noscript>&nbsp;</noscript>
+
+
+<link rel="stylesheet" type="text/css" id="yui_marker_loader_css" />
+<link href="../css/CustomStyle.css" rel="stylesheet" type="text/css" />
+<link href="../css/CustomWysiwygStyle.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+<meta name="CnvHeaderVersion" content="v5.0" />
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+        <style type="text/css">
+        body {
+            color:#000000;
+            background-color:#ffffff;
+        }
+
+        a:link, a:visited, div.responsive a:visited, div.responsive a:link{
+            color:#05bbee;
+        }
+
+        a:hover{
+            color:#05bbee;
+        }
+
+        h1,h2,h3,h4,h5{
+            color:#74b745;
+        }
+
+        .header{
+            background-color: #dbeef3;
+            color: #dbeef3;
+        }
+
+        .header .navbar-right li{
+            background-color: #ffffff;
+        }
+
+        .header .navbar-right li:hover{
+            background-color: #05BBED;
+            color: #dbeef3;
+        }
+
+        .header .navbar-right li a{
+            color: #05BBED;
+        }
+
+        .header .navbar-right li a:hover{
+            color: #05BBED;
+        }
+
+        .footer{
+            background-color: #ffffff;
+            color: #4d525a;
+        }
+
+
+        .footer a:link, .footer a:visited{
+            color: #74b745;
+        }
+
+        .footer a:hover{
+            color: #05bbee;
+        }
+
+        .footer h4 {
+            color: #ffffff;
+        }
+
+        /*Donation form next, previous, cancel step buttons*/
+        div.responsive a.next-step, div.responsive button.next-step, div.responsive a.step-button, div.responsive button.step-button, div.responsive input.step-button {
+            background-color: #4777A8;
+            background-image: none;
+            border: none;
+            border-radius: 3px;
+            color: #ffffff;
+            text-decoration:none;
+            line-height:20px;
+            margin-right:5px;
+        }
+
+        /*Donation form hover/active/focus states for next, previous, cancel step buttons*/
+        div.responsive a.next-step:hover, div.responsive button.next-step:hover, div.responsive button.cancel-step:hover, div.responsive button.cancel-step:focus, div.responsive button.cancel-step:active{
+            background-image:none;
+            background-color:#d6d6d6;
+            color:#ffffff;
+            text-decoration:none;
+        }
+
+        /*progress page steps*/
+        div.progress-bar-step-container {
+            padding-right: 33px; /*add space between the labels*/
+        }
+        div.progress-bar-step-current div.progress-bar-step-number-container {
+            background: #4777a8;
+        }
+
+        /*progress page steps*/
+        div.progress-bar-step-number-container {
+            width: 44px;
+            border-radius: 0;
+            -moz-border-radius: 0;
+            -webkit-border-radius: 0;
+
+        }
+
+        /* Donation form Labels */
+        LABEL.FormLabel {
+            width: initial; /*reset to prevent wrapping of required * */
+            min-width: initial; /*reset to prevent wrapping of required * */
+            font-weight:700; /* match the bootstrap font weight */
+        }
+
+
+        /*Menu toggle button*/
+        .navbar-toggle {
+            background-color: #000000;
+
+        }
+        .navbar-toggle .icon-bar {
+            background: #ffffff;
+        }
+
+        .navbar-brand{
+            height:auto;
+            max-width:50%;
+        }
+
+        .navbar-brand img{
+            max-height: 200px;
+        }
+
+        .header,
+        main,
+        .footer {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        /* Custom page header */
+        .header {
+            border-bottom: 1px solid #e5e5e5;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        /* Custom page footer */
+        .footer {
+            padding-top: 20px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .footer li a:hover {
+            text-decoration: none;
+        }
+
+        .copyright {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* Customize container */
+        @media (min-width: 768px) {
+
+            main {
+                margin: 40px 0;
+            }
+
+        }
+        /* Responsive: Portrait tablets and up */
+        @media screen and (min-width: 768px) {
+            /* Remove the padding we set earlier */
+            .header,
+            .footer {
+                padding-right: 0;
+                padding-left: 0;
+            }
+            /* Space out the masthead */
+            .header {
+                margin-bottom: 30px;
+            }
+
+        }
+
+
+        /* Mobile Only */
+        @media (max-width: 767px){
+
+            main {
+                margin: 20px 0;
+            }
+
+            .pull-none-sm {
+                float: none !important;
+            }
+
+            .footer-box {
+                padding: 10px 0;
+            }
+
+            .mobile div.responsive{
+                width:100%;
+            }
+
+        }
+
+        /* donation form */
+        div.donation-form-container.responsive{
+            background-color:#ffffff;
+            border-color: #ffffff;
+        }
+
+        div.donation-level-input-container{
+            padding:0px;
+
+        }
+
+
+    </style>
+
+
+
+
+ 
+
+		
+</head>
+<body
+
+
+
+
+
+
+
+
+
+
+
+
+class="mobile"
+
+>	
+<div class="header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="www.blackbaud.com" class="navbar-brand" target="_parent">
+    <img src="../images/content/pagebuilder/logo-bb.png" alt="Blue Print Site" class="img-responsive" />
+</a>
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <nav class="navbar-right">
+                <ul class="nav navbar-nav">
+	<li><a href="http://www.blackbaud.com">Home</a></li>
+	<li><a href="http://Unknown SiteInfoElement Domain/donate">Donate</a></li>
+	<li><a href="http://trainingcentral.blackbaud.com">About</a></li>
+	<li>
+            <a href="UserLogin">Login</a> </li>
+</ul>
+
+
+            </nav>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                
+
+
+
+
+
+
+
+
+<form name="process" id="ProcessForm" action="https://secure8.convio.net/cgisb/site/Donation2" method="post" onsubmit="return checkDoubleClick();" >
+
+<div class="donation-form-container responsive">
+
+
+<div class="donation-form-content">
+
+
+
+
+
+<div class="form-info-message">
+<div class="form-message-text"><span class="header-warning-message"></span> Transaction processing is not live. Payment Disabled=TRUE. Transaction Mode=TEST_GOOD.</div>
+</div>
+
+
+<input type="hidden" name="user_donation_amt" id="user_donation_amt" value="" />
+<input type="hidden" name="company_min_matching_amt" id="company_min_matching_amt" value="" />
+<input type="hidden" name="currency_locale" id="currency_locale" value="en_US" />
+
+<div class="form-progress-bar" >
+
+<div class="progress-bar-step-container progress-bar-step-current">
+<div class="progress-bar-step-number-container">1</div>
+<div class="progress-bar-step-text-container">Gift Information</div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+<h2 class="section-header-container">
+
+Gift Information
+
+</h2>
+
+
+
+<div id="level_standard_row">
+
+<div class="don-standard-levels form-row">
+<div class="levels-label">
+
+</div>
+
+<div id="level_standard_row" class="form-row form-donation-level">
+
+<div class="form-content">
+<span class="field-required"></span> <span class="aural-only">Field Is Required</span>
+
+<span class="FormLabelText">Select A Gift Amount:</span> 
+
+
+<div class="donation-level-general-ask">
+
+</div>
+
+<div class="donation-levels">
+
+<div class="donation-level-container">
+<div class="form-content">
+
+<div class="donation-level-input-container form-input">
+
+<div class="donation-level-label-input-container">
+<input type="radio" name="level_standardexpanded" id="level_standardexpanded2003"
+value="2003"
+
+checked="checked"
+onclick="evalMatchingGift('$60.00');
+updateDonorCoverAmount('$60.00');"
+/>
+</div>
+
+<label for="level_standardexpanded2003" onclick="">
+
+
+<div class="donation-level-amount-container">
+$60.00
+</div>
+
+
+
+</label>
+
+
+
+
+
+
+
+</div>
+
+<input type="hidden" name="level_standardexpandedsubmit" id="level_standard_2003expandedsubmit" value="true" /> 
+</div>
+</div>
+<div class="donation-level-container">
+<div class="form-content">
+
+<div class="donation-level-input-container form-input">
+
+<div class="donation-level-label-input-container">
+<input type="radio" name="level_standardexpanded" id="level_standardexpanded2004"
+value="2004"
+
+
+onclick="evalMatchingGift('$120.00');
+updateDonorCoverAmount('$120.00');"
+/>
+</div>
+
+<label for="level_standardexpanded2004" onclick="">
+
+
+<div class="donation-level-amount-container">
+$120.00
+</div>
+
+
+
+</label>
+
+
+
+
+
+
+
+</div>
+
+<input type="hidden" name="level_standardexpandedsubmit" id="level_standard_2004expandedsubmit" value="true" /> 
+</div>
+</div>
+<div class="donation-level-container">
+<div class="form-content">
+
+<div class="donation-level-input-container form-input">
+
+<div class="donation-level-label-input-container">
+<input type="radio" name="level_standardexpanded" id="level_standardexpanded2001"
+value="2001"
+
+
+onclick="evalMatchingGift('$35.00');
+updateDonorCoverAmount('$35.00');"
+/>
+</div>
+
+<label for="level_standardexpanded2001" onclick="">
+
+
+<div class="donation-level-amount-container">
+$35.00
+</div>
+
+
+
+</label>
+
+
+
+
+
+
+
+</div>
+
+<input type="hidden" name="level_standardexpandedsubmit" id="level_standard_2001expandedsubmit" value="true" /> 
+</div>
+</div>
+<div class="donation-level-container">
+<div class="form-content">
+
+<div class="donation-level-input-container form-input">
+
+<div class="donation-level-label-input-container">
+<input type="radio" name="level_standardexpanded" id="level_standardexpanded2002"
+value="2002"
+
+
+onclick="evalMatchingGift(document.getElementById('level_standardexpanded2002amount').value);
+updateDonorCoverAmount(document.getElementById('level_standardexpanded2002amount').value);"
+/>
+</div>
+
+<label for="level_standardexpanded2002" onclick="">
+
+
+
+<div class="donation-level-label-container">
+Enter an Amount
+</div>
+
+
+</label>
+
+
+<div class="donation-level-user-entered">
+<label for="level_standardexpanded2002amount"><span class="aural-only">Enter amount</span></label>
+<input type="text" name="level_standardexpanded2002amount" id="level_standardexpanded2002amount" value="" size="12" maxlength="50"
+onfocus="var el = document.getElementById ('level_standardexpanded2002');if (el) el.click(); fire_obs_comp_event('level_standardexpanded2002amount', this, event);evalMatchingGift(value); "
+onchange="fire_obs_comp_event('level_standardexpanded2002amount', this, event);evalMatchingGift(value);"
+onkeyup="fire_obs_comp_event('level_standardexpanded2002amount', this, event);evalMatchingGift(value);"
+onblur="fire_obs_comp_event('level_standardexpanded2002amount', this);updateDonorCoverAmount(value);"
+/>
+
+
+</div>
+
+
+
+
+
+</div>
+
+<input type="hidden" name="level_standardexpandedsubmit" id="level_standard_2002expandedsubmit" value="true" /> 
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+Y.use("jquery-ui", function(Y) {
+jQuery(function(){
+// subscribe observables
+jQuery('div.donation-level-element-container').find('input[type="radio"]').each(function() {
+var syncAction = function(obj) {
+if (obj.is(':checked')) {
+obj.closest('div.donation-level-container').addClass('selected');
+}
+else {
+obj.closest('div.donation-level-container').removeClass('selected');
+};
+return arguments.callee;
+}(jQuery(this));
+jQuery(this).click(function() {
+jQuery('div.donation-level-container').removeClass('selected');
+syncAction(jQuery(this));
+});
+});
+});
+});
+</script><noscript>&nbsp;</noscript>
+</div>
+
+<div class="levels-gift-aid">
+
+</div>
+<input type="hidden" name="level_standardsubmit" id="level_standardsubmit" value="true" />
+<script type="text/javascript">
+function updateDonorCoverAmount(gift) {
+if (typeof updateAmount !== "undefined") {
+updateAmount(gift);
+}
+};
+function evalMatchingGift(gift) {
+
+}
+</script><noscript>&nbsp;</noscript>
+</div>
+<script type="text/javascript">
+// subscribe listeners to make an ajax call to the server to calculate the total amount
+Y.use('jquery-noconflict', function() {
+var fetchAmountFunc = function () {
+// find all the select, textarea, input, etc... and format them into key=val pairs.
+var params = jQuery('#level_standard_row :input').serialize();
+// parse the path and append the key/value pairs above to the url
+var url = 'https://secure8.convio.net/cgisb/site/Donation2?idb=1566683508&level_standardajaxfetch=true&df_id=1500&mfc_pref=T&1500.donation=form1&level_standardtotalcalculateBtn=true';
+var index = url.indexOf("?");
+var path = url.substring(0, index);
+var args = url.substring(index+1, url.length);
+args += '&' + params;
+var recurringGiftTermsContainer = jQuery('#recurring_gift_terms_acceptance_message_container');
+if(recurringGiftTermsContainer && recurringGiftTermsContainer.length > 0) {
+jQuery.ajax(path, {
+data: args,
+success: function(data) {
+jQuery('#recurring_gift_terms_acceptance_message_container').trigger("recurringTermsChange");
+}
+});
+}
+};
+jQuery('#level_standard_row :input[type=text]').blur(function() {
+fetchAmountFunc();
+});
+jQuery('#level_standard_row input:checkbox, #level_standard_row input:radio').click(function() {
+fetchAmountFunc();
+});
+jQuery('#level_standard_row select').change(function() {
+fetchAmountFunc();
+});
+// call it on page load
+fetchAmountFunc();
+});
+</script><noscript>&nbsp;</noscript>
+</div>
+
+
+
+
+<h2 class="section-header-container">
+
+Billing Information
+
+</h2>
+
+
+
+
+<div id="billing_first_name_row" class="form-row form-text">
+
+<div class="form-content">
+<span class="field-required"></span>
+<label for="billing_first_namename">First Name:</label>
+
+<input type="text" name="billing_first_namename" id="billing_first_namename"
+value=""
+maxlength="50"
+/>
+
+<input type="hidden" name="billing_first_namesubmit" id="billing_first_namesubmit" value="true" />
+<script type="text/javascript">
+var comp = new ObservableComponent ('billing_first_name', 'name');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('billing_first_name_row', _display);
+this.disable_submit_flag (_hidden);
+}
+
+
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+
+
+
+<div id="billing_middle_name_row" class="form-row form-text">
+
+<div class="form-content">
+
+<label for="billing_middle_namename">Middle Name:</label>
+
+<input type="text" name="billing_middle_namename" id="billing_middle_namename"
+value=""
+maxlength="50"
+/>
+
+<input type="hidden" name="billing_middle_namesubmit" id="billing_middle_namesubmit" value="true" />
+<script type="text/javascript">
+var comp = new ObservableComponent ('billing_middle_name', 'name');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('billing_middle_name_row', _display);
+this.disable_submit_flag (_hidden);
+}
+
+
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+
+
+
+<div id="billing_last_name_row" class="form-row form-text">
+
+<div class="form-content">
+<span class="field-required"></span>
+<label for="billing_last_namename">Last Name:</label>
+
+<input type="text" name="billing_last_namename" id="billing_last_namename"
+value=""
+maxlength="50"
+/>
+
+<input type="hidden" name="billing_last_namesubmit" id="billing_last_namesubmit" value="true" />
+<script type="text/javascript">
+var comp = new ObservableComponent ('billing_last_name', 'name');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('billing_last_name_row', _display);
+this.disable_submit_flag (_hidden);
+}
+
+
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+
+
+
+<div id="billing_addr_street1_row" class="form-row form-text">
+
+<div class="form-content">
+<span class="field-required"></span>
+<label for="billing_addr_street1name">Street 1:</label>
+
+<input type="text" name="billing_addr_street1name" id="billing_addr_street1name"
+value=""
+maxlength="50"
+/>
+
+<input type="hidden" name="billing_addr_street1submit" id="billing_addr_street1submit" value="true" />
+<script type="text/javascript">
+var comp = new ObservableComponent ('billing_addr_street1', 'name');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('billing_addr_street1_row', _display);
+this.disable_submit_flag (_hidden);
+}
+
+
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+
+
+
+
+<div id="billing_addr_street2_row" class="form-row form-text">
+
+<div class="form-content">
+
+<label for="billing_addr_street2name">Street 2:</label>
+
+<input type="text" name="billing_addr_street2name" id="billing_addr_street2name"
+value=""
+maxlength="50"
+/>
+
+<input type="hidden" name="billing_addr_street2submit" id="billing_addr_street2submit" value="true" />
+<script type="text/javascript">
+var comp = new ObservableComponent ('billing_addr_street2', 'name');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('billing_addr_street2_row', _display);
+this.disable_submit_flag (_hidden);
+}
+
+
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+
+
+
+
+<div id="billing_addr_city_row" class="form-row form-text">
+
+<div class="form-content">
+<span class="field-required"></span>
+<label for="billing_addr_cityname">City:</label>
+
+<input type="text" name="billing_addr_cityname" id="billing_addr_cityname"
+value=""
+maxlength="50"
+/>
+
+<input type="hidden" name="billing_addr_citysubmit" id="billing_addr_citysubmit" value="true" />
+<script type="text/javascript">
+var comp = new ObservableComponent ('billing_addr_city', 'name');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('billing_addr_city_row', _display);
+this.disable_submit_flag (_hidden);
+}
+
+
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+
+
+
+
+<div id="billing_addr_state_row" class="form-row form-selectlist">
+
+<div class="form-content">
+<span class="field-required"></span>
+<label class="FormLabel" for="billing_addr_state">State/Province:</label>
+<select name="billing_addr_state" id="billing_addr_state" size="1" 
+ onchange="fire_obs_comp_event('billing_addr_state', this)">
+<option ></option>
+<option value="AK" >AK - Alaska</option>
+<option value="AL" >AL - Alabama</option>
+<option value="AR" >AR - Arkansas</option>
+<option value="AZ" >AZ - Arizona</option>
+<option value="CA" >CA - California</option>
+<option value="CO" >CO - Colorado</option>
+<option value="CT" >CT - Connecticut</option>
+<option value="DC" >DC - District of Columbia</option>
+<option value="DE" >DE - Delaware</option>
+<option value="FL" >FL - Florida</option>
+<option value="GA" >GA - Georgia</option>
+<option value="HI" >HI - Hawaii</option>
+<option value="IA" >IA - Iowa</option>
+<option value="ID" >ID - Idaho</option>
+<option value="IL" >IL - Illinois</option>
+<option value="IN" >IN - Indiana</option>
+<option value="KS" >KS - Kansas</option>
+<option value="KY" >KY - Kentucky</option>
+<option value="LA" >LA - Louisiana</option>
+<option value="MA" >MA - Massachusetts</option>
+<option value="MD" >MD - Maryland</option>
+<option value="ME" >ME - Maine</option>
+<option value="MI" >MI - Michigan</option>
+<option value="MN" >MN - Minnesota</option>
+<option value="MO" >MO - Missouri</option>
+<option value="MS" >MS - Mississippi</option>
+<option value="MT" >MT - Montana</option>
+<option value="NC" >NC - North Carolina</option>
+<option value="ND" >ND - North Dakota</option>
+<option value="NE" >NE - Nebraska</option>
+<option value="NH" >NH - New Hampshire</option>
+<option value="NJ" >NJ - New Jersey</option>
+<option value="NM" >NM - New Mexico</option>
+<option value="NV" >NV - Nevada</option>
+<option value="NY" >NY - New York</option>
+<option value="OH" >OH - Ohio</option>
+<option value="OK" >OK - Oklahoma</option>
+<option value="OR" >OR - Oregon</option>
+<option value="PA" >PA - Pennsylvania</option>
+<option value="RI" >RI - Rhode Island</option>
+<option value="SC" >SC - South Carolina</option>
+<option value="SD" >SD - South Dakota</option>
+<option value="TN" >TN - Tennessee</option>
+<option value="TX" >TX - Texas</option>
+<option value="UT" >UT - Utah</option>
+<option value="VA" >VA - Virginia</option>
+<option value="VT" >VT - Vermont</option>
+<option value="WA" >WA - Washington</option>
+<option value="WI" >WI - Wisconsin</option>
+<option value="WV" >WV - West Virginia</option>
+<option value="WY" >WY - Wyoming</option>
+<option value="AS" >AS - American Samoa</option>
+<option value="FM" >FM - Federated States of Micronesia</option>
+<option value="GU" >GU - Guam</option>
+<option value="MH" >MH - Marshall Islands</option>
+<option value="MP" >MP - Northern Mariana Islands</option>
+<option value="PR" >PR - Puerto Rico</option>
+<option value="PW" >PW - Palau</option>
+<option value="VI" >VI - Virgin Islands</option>
+<option value="AA" >AA - Armed Forces Americas</option>
+<option value="AE" >AE - Armed Forces</option>
+<option value="AP" >AP - Armed Forces Pacific</option>
+<option value="AB" >AB - Alberta</option>
+<option value="BC" >BC - British Columbia</option>
+<option value="MB" >MB - Manitoba</option>
+<option value="NB" >NB - New Brunswick</option>
+<option value="NL" >NL - Newfoundland and Labrador</option>
+<option value="NS" >NS - Nova Scotia</option>
+<option value="NT" >NT - Northwest Territories</option>
+<option value="NU" >NU - Nunavut</option>
+<option value="ON" >ON - Ontario</option>
+<option value="PE" >PE - Prince Edward Island</option>
+<option value="QC" >QC - Quebec</option>
+<option value="SK" >SK - Saskatchewan</option>
+<option value="YT" >YT - Yukon</option>
+<option value="None" >None</option>
+
+</select>
+<script type="text/javascript">
+<!--
+var comp = new ObservableComponent('billing_addr_state', '');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('billing_addr_state_Row', _display);
+this.disable_submit_flag (_hidden);
+} 
+//-->
+</script>
+<noscript><br/>Required</noscript>
+
+<input type="hidden" name="billing_addr_statesubmit" id="billing_addr_statesubmit" value="true" />
+<script type="text/javascript">
+var comp = new ObservableComponent ('billing_addr_state', '');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('billing_addr_state_row', _display);
+this.disable_submit_flag (_hidden);
+}
+
+
+function billing_addr_state_listChanged(_evt)
+{
+var e = _evt ? _evt : event; // IE vs. Mozilla event model
+if (e) {
+var src = e.target ? e.target : e.srcElement; // IE vs. Mozilla event model
+fire_obs_comp_event('billing_addr_state', src);
+}
+}
+var el = document.getElementById('billing_addr_state');
+if (el) {
+Utils.addEvent (el, 'change', billing_addr_state_listChanged);
+}
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+
+
+
+
+
+<div id="billing_addr_zip_row" class="form-row form-text">
+
+<div class="form-content">
+<span class="field-required"></span>
+<label for="billing_addr_zipname">ZIP/Postal Code:</label>
+
+<input type="text" name="billing_addr_zipname" id="billing_addr_zipname"
+value=""
+maxlength="50"
+/>
+
+<input type="hidden" name="billing_addr_zipsubmit" id="billing_addr_zipsubmit" value="true" />
+<script type="text/javascript">
+var comp = new ObservableComponent ('billing_addr_zip', 'name');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('billing_addr_zip_row', _display);
+this.disable_submit_flag (_hidden);
+}
+
+
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+
+
+
+
+<div id="donor_email_address_row" class="form-row form-text">
+
+<div class="form-content">
+<span class="field-required"></span>
+<label for="donor_email_addressname">Email Address:</label>
+
+<input type="text" name="donor_email_addressname" id="donor_email_addressname"
+value=""
+maxlength="255"
+/>
+
+<input type="hidden" name="donor_email_addresssubmit" id="donor_email_addresssubmit" value="true" />
+<script type="text/javascript">
+var comp = new ObservableComponent ('donor_email_address', 'name');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('donor_email_address_row', _display);
+this.disable_submit_flag (_hidden);
+}
+
+
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+
+
+
+
+<div class="form-row form-checkbox" id="donor_email_opt_in_Row">
+
+<div class="form-content">
+
+<span class="check-box-form-label-text"></span>
+
+
+<input type="hidden" name="donor_email_opt_inname" id="donor_email_opt_inname" value="implicit" />
+<span class="auto-opt-in-warning-message">If you donate and have not already registered, you will receive periodic updates and communications from Blue Print Site.</span>
+
+
+<script type="text/javascript">
+var comp = new ObservableComponent ('donor_email_opt_in', 'name');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('donor_email_opt_in_Row', _display);
+this.disable_submit_flag (_hidden);
+}
+comp.set = function (_value)
+{
+if (document.getElementById('donor_email_opt_inname')) {
+document.getElementById('donor_email_opt_inname').checked = _value;
+this.fireEvent();
+}
+}
+comp.get = function()
+{
+if (document.getElementById('donor_email_opt_inname'))
+return document.getElementById('donor_email_opt_inname').checked;
+}
+comp.clear = function()
+{
+this.set(false);
+}
+
+ 
+</script><noscript>&nbsp;</noscript>
+<input type="hidden" name="donor_email_opt_insubmit" id="donor_email_opt_insubmit" value="true" />
+</div>
+</div>
+
+
+
+
+
+<h2 class="section-header-container">
+
+Payment Information
+
+</h2>
+
+
+
+
+<div class="payment-type-element-container">
+
+
+<div id="payment_cc_container" class="payment-field-container">
+<h3>Credit Card Information:</h3>
+<div id="responsive_payment_typecc_type_row" class="form-row form-radio-array">
+
+<div class="form-content">
+<fieldset>
+<legend>Credit Card Type:</legend>
+<ul class="radio-array-list">
+<li class="tender-row ">
+<img src="../images/visa_small.gif" alt="Visa" name="responsive_payment_typecc_type_Visa" id="responsive_payment_typecc_type_Visa" />
+</li><li class="tender-row ">
+<img src="../images/discovercard_sm.gif" alt="Discover" name="responsive_payment_typecc_type_Discover" id="responsive_payment_typecc_type_Discover" />
+</li><li class="tender-row ">
+<img src="../images/amex_small.gif" alt="American Express" name="responsive_payment_typecc_type_American_Express" id="responsive_payment_typecc_type_American_Express" />
+</li><li class="tender-row ">
+<img src="../images/mastercd_small.gif" alt="MasterCard" name="responsive_payment_typecc_type_MasterCard" id="responsive_payment_typecc_type_MasterCard" />
+</li>
+</ul>
+</fieldset>
+<input type="hidden" name="responsive_payment_typecc_typesubmit" id="responsive_payment_typecc_typesubmit" value="true" />
+<script type="text/javascript">
+var comp = new ObservableRadioComponent ('responsive_payment_typecc_type', 'name');
+comp.hide = function(_hidden)
+{ 
+var _display = _hidden ? 'none' : '';
+set_display ('responsive_payment_typecc_type_row', _display);
+this.disable_submit_flag (_hidden);
+}
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+<div id="responsive_payment_typecc_number_row" class="form-row form-text">
+
+<div class="form-content">
+<span class="field-required"></span>
+<label for="responsive_payment_typecc_numbername">Credit Card Number:</label>
+
+<input type="text" name="responsive_payment_typecc_numbername" id="responsive_payment_typecc_numbername"
+value=""
+maxlength="22"
+autocomplete="off"/>
+
+<input type="hidden" name="responsive_payment_typecc_numbersubmit" id="responsive_payment_typecc_numbersubmit" value="true" />
+<script type="text/javascript">
+var comp = new ObservableComponent ('responsive_payment_typecc_number', 'name');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('responsive_payment_typecc_number_row', _display);
+this.disable_submit_flag (_hidden);
+}
+
+
+observe_component ('null', new ComponentDisplayer ('responsive_payment_typecc_number'));
+
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+<div id="responsive_payment_typecc_exp_date_row" class="form-row form-date">
+
+<div class="form-content">
+<span class="field-required"></span>
+<label for="responsive_payment_typecc_exp_date_MONTH">
+<span class="label-text">Expiration Date:</span><span class="aural-only">Select month of credit card</span>
+</label>
+<label for="responsive_payment_typecc_exp_date_YEAR" ><span class="aural-only">Select Expiration Year</span></label>
+<div class="date-input-container">
+
+<fieldset class="cardExpGroup">
+<select name="responsive_payment_typecc_exp_date_MONTH" id="responsive_payment_typecc_exp_date_MONTH" onChange="fire_obs_comp_event('responsive_payment_typecc_exp_date_MONTH', this)">
+<option value="1" >01</option>
+<option value="2" >02</option>
+<option value="3" >03</option>
+<option value="4" >04</option>
+<option value="5" >05</option>
+<option value="6" >06</option>
+<option value="7" selected="selected">07</option>
+<option value="8" >08</option>
+<option value="9" >09</option>
+<option value="10" >10</option>
+<option value="11" >11</option>
+<option value="12" >12</option>
+</select>
+<select name="responsive_payment_typecc_exp_date_YEAR" id="responsive_payment_typecc_exp_date_YEAR" onChange="fire_obs_comp_event('responsive_payment_typecc_exp_date_YEAR', this)">
+<option value="2024" selected="selected">2024</option>
+<option value="2025" >2025</option>
+<option value="2026" >2026</option>
+<option value="2027" >2027</option>
+<option value="2028" >2028</option>
+<option value="2029" >2029</option>
+<option value="2030" >2030</option>
+<option value="2031" >2031</option>
+<option value="2032" >2032</option>
+<option value="2033" >2033</option>
+<option value="2034" >2034</option>
+
+</select>
+</fieldset>
+<input type="hidden" name="responsive_payment_typecc_exp_date_DAY" id="responsive_payment_typecc_exp_date_DAY" value="1" />
+<script type="text/javascript">
+<!--
+var comp1 = new ObservableComponent ('responsive_payment_typecc_exp_date_MONTH', '');
+comp1.hide = function(_hidden) {
+var _display = _hidden ? 'none' : '';
+set_display ('responsive_payment_typecc_exp_date_Row', _display);
+this.disable_submit_flag (_hidden);
+}
+var comp2 = new ObservableComponent ('responsive_payment_typecc_exp_date_YEAR', '');
+comp2.hide = function(_hidden) {
+var _display = _hidden ? 'none' : '';
+set_display ('responsive_payment_typecc_exp_date_Row', _display);
+this.disable_submit_flag (_hidden); 
+}
+//--> 
+</script><noscript>&nbsp;</noscript>
+</div>
+<input type="hidden" name="responsive_payment_typecc_exp_datesubmit" id="responsive_payment_typecc_exp_datesubmit" value="true" />
+<script type="text/javascript">
+var comp = new ObservableComponent ('responsive_payment_typecc_exp_date', 'input');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('responsive_payment_typecc_exp_date_row', _display);
+disable_submit_flag ('responsive_payment_typecc_exp_datesubmit', _hidden);
+}
+comp.disable = function(_disabled)
+{
+disable_element ('responsive_payment_typecc_exp_date_MONTH', _disabled);
+disable_element ('responsive_payment_typecc_exp_date_DAY', _disabled);
+disable_element ('responsive_payment_typecc_exp_date_YEAR', _disabled);
+disable_element ('responsive_payment_typecc_exp_date_HOUR12',_disabled);
+disable_element ('responsive_payment_typecc_exp_date_HOUR24',_disabled); //For UK, 24 hour clock used
+disable_element ('responsive_payment_typecc_exp_date_MINUTE',_disabled);
+disable_element ('responsive_payment_typecc_exp_date_AMPM', _disabled);
+}
+
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+
+<div id="responsive_payment_typecc_cvv_row" class="form-row form-text cvv-input">
+
+<div class="form-content">
+<span class="field-required"></span>
+<label for="responsive_payment_typecc_cvvname">
+<span class="FormLabelText">CVV Number:</span>
+</label>
+<a href="http://help.convio.net/site/PageServer?s_site=cgisb&pagename=user_donation_cvv" class="HelpLink"
+title="What is this? Opens new window.">What is this?</a>
+<input type="text" name="responsive_payment_typecc_cvvname" id="responsive_payment_typecc_cvvname"
+value=""
+maxlength="4"
+autocomplete="off" />
+<input type="hidden" name="responsive_payment_typecc_cvvsubmit" id="responsive_payment_typecc_cvvsubmit" value="true" />
+<script type="text/javascript">
+//chrome is mapping cvv as card name
+if (/CriOS/.test(navigator.userAgent) || (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor))){
+document.getElementById('responsive_payment_typecc_cvvname').autocomplete='cc-csc';
+}
+var comp = new ObservableComponent ('responsive_payment_typecc_cvv', 'name');
+comp.hide = function(_hidden)
+{
+var _display = _hidden ? 'none' : '';
+set_display ('responsive_payment_typecc_cvv_row', _display);
+this.disable_submit_flag (_hidden);
+}
+
+</script><noscript>&nbsp;</noscript>
+</div>
+</div>
+
+</div>
+
+
+
+<input type="hidden" name="responsive_payment_typesubmit" id="responsive_payment_typesubmit" value="true" />
+<script type="text/javascript">
+function PaymentObserver()
+{
+this.observe = function(_event)
+{
+var sVal = _event.component.get();
+switch (sVal)
+{
+case 'check':
+hide_element('payment_cc_container');
+hide_element('payment_bank_container');
+show_element('payment_check_container');
+break;
+case 'credit':
+hide_element('payment_bank_container');
+hide_element('payment_check_container');
+show_element('payment_cc_container');
+break;
+case 'ach':
+hide_element('payment_cc_container');
+hide_element('payment_check_container');
+show_element('payment_bank_container');
+break;
+case 'paypal':
+case 'amazon':
+case 'mobilepay':
+default:
+// hide all
+hide_element('payment_bank_container');
+hide_element('payment_cc_container');
+hide_element('payment_check_container');
+break;
+}
+}
+}
+// Set the observer to show/hide the relevant fields
+observe_component ('responsive_payment_typepay_typeradio', new PaymentObserver());
+</script><noscript>&nbsp;</noscript>
+</div>
+
+
+
+
+
+<div class="button-container clearfix">
+<div class="button-sub-container">
+
+<button class="step-button action-button finish-step" type="submit" id="pstep_finish" name="pstep_finish" value="Process">Process</button>
+
+
+
+
+<button class="step-button cancel-step" type="submit" id="pstep_cancel" name="pstep_cancel" value="Cancel" title="Cancel" >Cancel</button>
+
+</div>
+</div>
+<input type="hidden" name="idb" id="idb" value="1566683508" />
+<input type="hidden" name="df_id" id="df_id" value="1500" />
+<input type="hidden" name="mfc_pref" id="mfc_pref" value="T" />
+
+
+
+<div class="form-row">
+<div class="html-caption-container">
+<script src="https://cdn.givechariot.com/cargo/luminate-online/chariot.js" type="text/javascript"></script>
+
+</div>
+</div>
+
+
+
+</div>
+ 
+<input type="hidden" name="1500.donation" id="1500.donation" value="form1" />
+ 
+</div>
+<script type="text/javascript">
+var submitted = false;
+function checkDoubleClick()
+{
+var elCheck = '';
+if (elCheck == 'el') {
+alert ('Form submission is not enabled when previewing an individual data element.');
+return false;
+} else if (submitted) {
+alert('You have already submitted this payment. Please wait....');
+return false;
+} else {
+submitted = true;
+return true;
+}
+}
+</script><noscript>&nbsp;</noscript>
+
+</form>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+         <div class="container">
+         <div class="row">
+             <div class="col-sm-6">
+                 <div class="footer-box pull-left pull-none-sm">
+                     <h4>Contact Us:</h4>
+                     <address>
+                         11500 Domain<br>
+                         <br>
+                         <br>
+                     </address>
+                     <a class="phone" href="tel:512-807-3752">512-807-3752</a>
+                 </div>
+             </div>
+
+             <div class="col-sm-6">
+                 <div class="footer-box pull-right pull-none-sm">
+                         <ul class="list-inline">
+<li><a title=" Facebook " class="fa fa-facebook fa-3x" href=" http://www.facebook.com/ " target="_blank"></a></li>
+<li><a title=" Twitter " class="fa fa-twitter fa-3x" href=" http://www.twitter.com/ " target="_blank"></a></li>
+</ul>
+
+                 </div>
+             </div>
+
+         </div>
+
+         <div class="row">
+             <div class="copyright col-sm-12">
+                 <p>Blackbaud &copy; 2024</p>
+             </div>
+         </div>
+     </div>
+    <!-- /container -->
+
+
+</footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
+<script>
+
+let connectScript = document.createElement("script");
+connectScript.src = "https://cdn.givechariot.com/chariot-connect.umd.js";
+document.head.appendChild(connectScript);
+// let chariot;
+// const chariot = document.createElement("chariot-connect");
+// chariot.setAttribute("cid", "test_42938b6e1af35ff9ba360c0e3239e8afc688a1e5c55fa969d353b58d6ba238ad");
+
+function getDonationAmount() {
+  const activeElement = document.querySelector(
+    ".donation-level-container .donation-level-input-container label .donation-level-amount-container"
+    );
+
+  let amount = undefined;
+
+  if (activeElement) {
+    amount = parseAmount(activeElement.textContent);
+  } else {
+    const customAmount = parseFloat(
+      parseAmount(
+        document.querySelector(
+          '.donation-level-container.other-amount .donation-level-user-entered input[type="text"]'
+        )?.value || ""
+      )
+    );
+
+    if (!customAmount) {
+      return undefined;
+    }
+
+    amount = customAmount;
+  }
+
+  const feesCheck = document.getElementById("cover_fees_radio")?.checked;
+  if (feesCheck) {
+    const feeElement = document.getElementById("cover_fees_activeamt");
+    const feeAmount = parseAmount(feeElement.textContent);
+    amount += feeAmount;
+  }
+
+  return Math.ceil(amount) * 100;
+}
+
+function parseAmount(content) {
+  const amountText = content.replace("$", "").replace(",", "");
+  return parseFloat(amountText);
+}
+
+
+function waitForElement(selector) {
+  return new Promise((resolve) => {
+    if (document.querySelector(selector)) {
+      return resolve(document.querySelector(selector));
+    }
+
+    const observer = new MutationObserver((mutations) => {
+      if (document.querySelector(selector)) {
+        observer.disconnect();
+        resolve(document.querySelector(selector));
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  });
+}
+
+waitForElement(
+  "#payment_cc_container"
+).then((elm) => {
+  var chariot = document.createElement("chariot-connect");
+  chariot.setAttribute("cid", "test_42938b6e1af35ff9ba360c0e3239e8afc688a1e5c55fa969d353b58d6ba238ad");
+  chariot.setAttribute("theme", 'GradientTheme')
+  chariot.setAttribute("id", "chariot")
+
+  const outerElement = elm.parentElement;
+  const externalPaymentSpan = document.createElement("span");
+  externalPaymentSpan.appendChild(chariot);
+  const paymentDiv = document.getElementById('payment_cc_container');
+  const paymentNode = document.getElementById('payment_cc_container').parentNode;
+  paymentNode.insertBefore(externalPaymentSpan, paymentDiv);
+
+
+// Wait on the Chariot Connect to be initialized before defining the
+// onDonationRequest
+chariot.addEventListener("CHARIOT_INIT", () => {
+  // add ondonation data
+  chariot.onDonationRequest(async () => {
+	  // If your webpage does not have jQuery, you may need to use a different
+    // method to get the form data
+    const form = $("form").serializeArray();
+    const formMap = form.reduce((accumulator, item) => {
+      accumulator[item.name] = item.value;
+      return accumulator;
+    }, {});
+
+    // This part is specific to your Luminate Online form. You will need to
+    // change the parameters to match your form's fields.
+    // const isRecurring = formMap["level_autorepeat"] === "true";
+    const firstName = formMap["billing_first_namename"];
+    const middleName = formMap["billing_middle_namename"]
+    const lastName = formMap["billing_last_namename"];
+    const email = formMap["donor_email_addressname"];
+    const street1 = formMap["billing_addr_street1name"];
+    const street2 = formMap["billing_addr_street2name"];
+    const city = formMap["billing_addr_cityname"];
+    const state = formMap["billing_addr_state"];
+    const zip = formMap["billing_addr_zipname"];
+    // The billing address information as well as the first name, last name, email
+    // are required parameters to the Luminate Online API, so we must check that
+    // they are filled out before continuing.
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !street1 ||
+      !city ||
+      !state ||
+      !zip
+    ) {
+      alert("Please fill out all required fields");
+      return;
+    }
+
+    const phone = formMap["mobile_phone_input"] || formMap["donor_phonename"];
+    const recognitionName = formMap["tr_recognition_namerec_namename"];
+    const anonymousCheck = formMap["tr_recognition_nameanonymousname"] === "on";
+    const displayGiftCheck = formMap["tr_show_gift_to_publicname"] === "on";
+    const includeJointDonor =
+      formMap["add_a_spouse_or_partner_name_radio"] === "true";
+      console.log('getDonationAmount(): ', getDonationAmount());
+    return {
+      amount: getDonationAmount(), // this function will be defined below
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone,
+      frequency: "ONE_TIME",
+      address: {
+        line1: street1,
+        line2: street2,
+        city,
+        state,
+        country: '',
+        postalCode: zip
+      },
+      metadata: {
+        street1: street1,
+        street2: street2,
+        city: city,
+        state: state,
+        zip: zip,
+        // commenting these out because I don't know what they are and I don't want to try to access something that doesn't exist
+        // title: formMap["billing_title"],
+        recognitionName: recognitionName,
+        anonymous: anonymousCheck,
+        displayGift: displayGiftCheck,
+        jointDonorFirstName: includeJointDonor
+          ? formMap["joint_donor_first_namename"]
+          : undefined,
+        jointDonorLastName: includeJointDonor
+          ? formMap["joint_donor_last_namename"]
+          : undefined,
+        // formId: formMap["df_id"],
+        // eventId: formMap["FR_ID"],
+        // proxyId: formMap["PROXY_ID"],
+        // proxyType: formMap["PROXY_TYPE"],
+      },
+    };
+  });
+
+  chariot.addEventListener('CHARIOT_SUCCESS', ({ detail }) => {
+    const amount = detail.grantIntent.amount;
+    const workflowSessionId = detail.workflowSessionId;
+
+    const req = {
+      method: 'POST',
+      headers: {
+        // accept: 'application/json',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ workflowSessionId, amount })
+    };
+
+    fetch("http://localhost:3000/submit", req)
+    // .then(response => response.json())
+    .then(response => {
+      console.log('response:', response)
+    })
+    .catch(err => console.error(err));
+    
+    if (detail.grantIntent) {
+      window.location.href = "https://www.thankyou.com/";
+    }
+  });
+
+});
+
+
+});
+
+</script>
+</body>
+
+</html>
