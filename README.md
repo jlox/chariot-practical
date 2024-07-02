@@ -2,6 +2,7 @@
 
 To run: 
 npm i
+
 node main.js
 
 
